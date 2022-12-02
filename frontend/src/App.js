@@ -1,11 +1,20 @@
 import React from "react";
 
+import { Badge, Container } from 'react-bootstrap';
+
 const App = () => {
     return (
         <div>
-            <h1>React App</h1>
+            <Container>
+                <h1>
+                    Example heading{'Shop'}
+                    <Badge bg="secondary" as="button">
+                        New
+                    </Badge>
+                </h1>
+            </Container>
         </div>
-    );
+    )
 };
 
 export default App;

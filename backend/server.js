@@ -1,14 +1,15 @@
 import express from "express";
+import { data } from "./data.js";
 
 
 const app = express();
 
 app.get("/hw", (req, res) => {
-    res.send("Hello World!");
+    res.send(data["name"]);
 }
 );
 
-app.listen(5000, () => {
-    console.log("Server started on port 5000");
+app.listen(3001, () => {
+    console.log("Server started on port 3001");
 }
 );
