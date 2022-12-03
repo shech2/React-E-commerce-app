@@ -1,7 +1,7 @@
 ## React Ex2 - Online Store
 
 # dependencies (Needed to be installed before start):
-    Frontend:
+#    Frontend:
     "@coreui/coreui": "^4.2.4",
     "@coreui/react": "^4.4.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -17,7 +17,7 @@
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
 
-    Backend:
+#    Backend:
     "axios": "^1.2.0",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
