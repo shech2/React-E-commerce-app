@@ -3,6 +3,7 @@
 # Dependencies (Needed to be installed before use):
 #    Frontend:
     "axios": "^1.2.0",
+    "react-scripts" : ^"5.0.0"
 #    Backend:
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
