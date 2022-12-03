@@ -16,6 +16,7 @@ import Cart from './componenets/pages/Cart';
 // CSS for Footer and Header:
 import './css/App.css';
 
+
 // App:
 
 const App = () => {

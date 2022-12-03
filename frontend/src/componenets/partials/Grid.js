@@ -22,7 +22,7 @@ function Grid() {
     // Card components creation:
     const Items = products.map((product) => {
         return (
-            <MDBCol key={product.id} size='4' sm={4} lg={4} xl={4} xxl={4}>
+            <MDBCol key={product._id} size='4' sm={4} lg={4} xl={4} xxl={4}>
                 <Card title={product.title} url={product.url} description={product.description} price={product.price} />
             </MDBCol>
         )

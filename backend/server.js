@@ -35,19 +35,11 @@ import productRouter from "../backend/src/routers/product.js";
 app.use("/", productRouter);
 
 
-app.get("/data", (req, res) => {
-    res.send(Data);
-}
-);
-
-
 app.post("/add-to-cart", (req, res) => {
     console.log(req.body);
     res.send(req.body);
 }
 );
-
-
 
 app.listen(3001, () => {
     console.log("Server started on port 3001");
