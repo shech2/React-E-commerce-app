@@ -1,20 +1,23 @@
-import React from "react";
+import React from 'react';
 
-import { Badge, Container } from 'react-bootstrap';
+// Import for Footer and Header Components:
+
+import Footer from './componenets/partials/footer';
+import Header from './componenets/partials/header';
+
+// CSS for Footer and Header:
+import './css/App.css';
+
+// App:
 
 const App = () => {
     return (
-        <div>
-            <Container>
-                <h1>
-                    Example heading{'Shop'}
-                    <Badge bg="secondary" as="button">
-                        New
-                    </Badge>
-                </h1>
-            </Container>
-        </div>
-    )
-};
+        <>
+            <Header logo='https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp' />
+
+            <Footer text='Shop' />
+        </>
+    );
+}
 
 export default App;
