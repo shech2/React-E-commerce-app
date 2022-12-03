@@ -1,11 +1,17 @@
 import express from "express";
-import { data } from "./data.js";
-
+import { Data } from "./data.js";
+import bodyParser from "body-parser";
+import cors from "cors";
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+app.use(cors());
 
-app.get("/hw", (req, res) => {
-    res.send(data["name"]);
+app.get("/data", (req, res) => {
+    res.send(Data);
 }
 );
 

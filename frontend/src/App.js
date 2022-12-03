@@ -1,9 +1,15 @@
 import React from 'react';
 
+// Add Router to App.js:
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+
 // Import for Footer and Header Components:
 
 import Footer from './componenets/partials/footer';
 import Header from './componenets/partials/header';
+import Home from './componenets/pages/Home';
 
 // CSS for Footer and Header:
 import './css/App.css';
@@ -12,11 +18,19 @@ import './css/App.css';
 
 const App = () => {
     return (
-        <>
-            <Header logo='https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp' />
+        <Router>
+            <>
+                <Header logo='https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp' />
 
-            <Footer text='Shop' />
-        </>
+
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                </Routes>
+
+
+                <Footer text='Shop' />
+            </>
+        </Router>
     );
 }
 
