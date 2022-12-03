@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './componenets/partials/footer';
 import Header from './componenets/partials/header';
 import Home from './componenets/pages/Home';
+import Cart from './componenets/pages/Cart';
+
 
 // CSS for Footer and Header:
 import './css/App.css';
@@ -20,11 +22,13 @@ const App = () => {
     return (
         <Router>
             <>
-                <Header logo='https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp' />
+                <Header logo='https://cdn.bitrix24.com/b2414835/landing/2c6/2c67a8aaa9039c5b02ecc1b1f44f1bda/Ayala_Malls_Logo_2x.png' />
 
 
                 <Routes>
                     <Route path='/' element={<Home />} />
+                    <Route path='/cart' element={<Cart />} />
+                    <Route path='*' element={<h1>Page Not Found</h1>} />
                 </Routes>
 
 

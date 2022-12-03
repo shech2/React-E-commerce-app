@@ -46,5 +46,30 @@ export const Data = [
         quantity: 50,
         url: "https://media.self.com/photos/5b43712e4d0c3c282a8878d1/master/pass/avocado.jpg",
         description: "This is a Avocado"
+    },
+    {
+        id: 6,
+        title: 'Pineapple',
+        price: 9.99,
+        quantity: 25,
+        url: "https://th.bing.com/th/id/OIP.Bv4B7-h6u1xufNkuHOvsCAHaFj?pid=ImgDet&w=1200&h=900&rs=1",
+        description: "This is a Avocado"
+    },
+    {
+        id: 7,
+        title: 'Strawberry',
+        price: 10.99,
+        quantity: 10,
+        url: "https://th.bing.com/th/id/R.999820d2cbb5a4f5a8607f2a8701fb18?rik=9Od6KrPNlYdfng&pid=ImgRaw&r=0",
+        description: "This is a Avocado"
+    },
+    {
+        id: 8,
+        title: 'Banana',
+        price: 2.99,
+        quantity: 23,
+        url: "https://www.hdwallpapers.in/download/bunch_of_large_yellow_bananas_with_black_stripe_hd_banana-HD.jpg",
+        description: "This is a Avocado"
     }
+
 ];

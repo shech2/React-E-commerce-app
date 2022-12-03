@@ -2,9 +2,26 @@ header {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.img-fluid {
+.card {
+    background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
+    padding-bottom: 1rem;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+.img-fluid2 {
+    align-content: center;
+    align-items: center;
+}
+
+.img-fluid {
+    width: 50%;
+    height: 50%;
 }
 
 footer {
@@ -12,4 +29,16 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.badge {
+    border-radius: 20px;
+    position: relative;
+    right: 0.5rem;
+    align-items: center;
+    align-content: center;
 }
