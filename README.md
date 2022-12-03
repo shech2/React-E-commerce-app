@@ -1,6 +1,6 @@
 ## React Ex2 - Online Store
 
-# dependencies (Needed to be installed before start):
+# Dependencies (Needed to be installed before use):
 #    Frontend:
     "@coreui/coreui": "^4.2.4",
     "@coreui/react": "^4.4.0",
