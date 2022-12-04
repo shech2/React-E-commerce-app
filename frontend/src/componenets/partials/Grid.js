@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import axios from 'axios';
-
 import Card from '../partials/Card.js';
+
+
 function Grid() {
     const [products, setProducts] = useState([]);
     useEffect(() => {
