@@ -4,6 +4,7 @@ import axios from 'axios';
 import Card from '../partials/Card.js';
 
 
+
 function Grid() {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -24,10 +25,12 @@ function Grid() {
     const Items = products.map((product) => {
         return (
             <MDBCol key={product._id} size='4' sm={4} lg={4} xl={4} xxl={4}>
-                <Card title={product.title} url={product.url} description={product.description} price={product.price} />
+                <Card _id={product._id} title={product.title} url={product.url} description={product.description} price={product.price} />
             </MDBCol>
         )
     });
+
+    console.log(Items, "items");
 
     // Seperate To Rows:
     var final = [];

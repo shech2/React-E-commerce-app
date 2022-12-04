@@ -1,10 +1,14 @@
 import productServies from '../services/productService.js';
 import { Data } from '../../data.js';
 
+
+
 const getData = async (req, res) => {
     const products = await productServies.getProducts();
     res.send(products);
 }
+
+
 
 const addToDB = async (req, res) => {
     try {
