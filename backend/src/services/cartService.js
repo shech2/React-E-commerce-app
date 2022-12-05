@@ -4,7 +4,7 @@ import ProductModel from '../models/product.js';
 
 
 const getCart = async () => {
-    const cart = await cartModel.find();
+    const cart = await cartModel.find().populate('cartItems');
     return cart;
 }
 
@@ -24,6 +24,15 @@ const addToCart = async (product) => {
         const index = cart.cartItems.findIndex((p) => p._id.toString() === pr._id.toString());
         if (index === -1) {
             cart.cartItems.push(pr);
+        }
+        else {
+            ProductModel.findOneAndUpdate({ _id: pr._id }, { $inc: { "quantity": +1 } }, { new: true }, (err, doc) => {
+                if (err) {
+                    console.log(err.message);
+                }
+                console.log(doc);
+            });
+
         }
         cart.totalPrice += pr.price;
         cart.totalQuantity += 1;

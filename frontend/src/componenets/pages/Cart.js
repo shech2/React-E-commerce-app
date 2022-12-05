@@ -1,13 +1,14 @@
 import React from "react";
-import '../../css/Cart.css'
+import CartGrid from '../partials/CartGrid.js';
+
 
 function Cart() {
     return (
-        <div className='cart'>
-            <h1>Cart</h1>
+        <div>
+            <CartGrid />
         </div>
+    );
 
-    )
 }
 
 export default Cart;

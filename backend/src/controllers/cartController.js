@@ -15,7 +15,7 @@ const getCart = async (req, res) => {
 const addToCart = (req, res) => {
     const product = req.body;
     cartService.addToCart(product);
-    res.send("Product added to cart");
+    res.send(product);
 };
 
 export default {

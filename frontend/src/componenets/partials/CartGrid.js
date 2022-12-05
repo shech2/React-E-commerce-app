@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useReducer, useContext } from 'react';
+import React, { useEffect, useState, useReducer } from 'react';
 import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import axios from 'axios';
-import Card from '../partials/Card.js';
-import { Store } from '../../Store.js';
+import CartItem from './CartItem.js';
 
-// Reducer:
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "FETCH_REQUEST":
@@ -19,59 +18,43 @@ const reducer = (state, action) => {
 };
 
 
-function Grid() {
+function CartGrid() {
     const [{ loading }, dispatch] = useReducer(reducer, {
         products: [],
         loading: false,
         error: false,
     });
 
+    const [cart, setCart] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
 
-    const [productsNew, setProducts] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
             dispatch({ type: "FETCH_REQUEST" });
-            const { data } = await axios({
+            const Data = await axios({
                 method: 'GET',
-                url: 'http://localhost:3001/data',
+                url: 'http://localhost:3001/cart',
             }).catch((err) => {
                 dispatch({ type: "FETCH_ERROR", payload: err });
             });
-            dispatch({ type: "FETCH_SUCCESS", payload: data });
-            setProducts(data);
+            setCart(Data.data);
+            setCartItems(Data.data[0].cartItems);
+            dispatch({ type: "FETCH_SUCCESS", payload: Data.data });
         };
         fetchData();
-    }, [setProducts]);
-
-
-    // sort the products by price:
-    productsNew.sort((a, b) => a.price - b.price);
-    const [Cart, setCart] = useState([]);
-
-
-    const { dispatch: ctxDispatch } = useContext(Store);
-    const onClickHandler = (item) => {
-        setCart([...Cart, item]);
-        axios({
-            method: 'POST',
-            url: 'http://localhost:3001/add-to-cart',
-            data: {
-                product: item
-            }
-        })
-        ctxDispatch({ type: 'ADD_TO_CART', payload: item });
-    };
-
+    }, [setCart]);
 
 
     // Card components creation:
-    const Items = productsNew.map((product) => {
+    const Items = cartItems.map((product) => {
         return (
             <MDBCol key={product._id} size='4' sm={4} lg={4} xl={4} xxl={4}>
-                <Card key={product._id} items={product} handleClick={onClickHandler} />
+                <CartItem key={product._id} items={product} />
             </MDBCol>
         )
     });
+
 
     // Seperate To Rows:
     var final = [];
@@ -87,6 +70,6 @@ function Grid() {
             </MDBRow>
         </MDBContainer>
     );
-}
+};
 
-export default Grid;
+export default CartGrid;
