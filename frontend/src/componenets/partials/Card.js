@@ -22,22 +22,3 @@ function Card({ items, handleClick }) {
 }
 
 export default Card;
-
-    // const { state, dispatch: cxtDispatch } = useContext(Store);
-
-
-    // function onClickHandler() {
-    //     const fetchData = async () => {
-    //         await axios({
-    //             method: 'POST',
-    //             url: 'http://localhost:3001/add-to-cart',
-    //             data: {
-    //                 product: items,
-    //             }
-    //         }).then(() => { cxtDispatch({ type: "ADD_TO_CART", payload: items }); })
-    //             .catch((err) => {
-    //                 cxtDispatch({ type: "ADD_TO_CART_ERROR", payload: err });
-    //             });
-    //     }
-    //     fetchData();
-    // }

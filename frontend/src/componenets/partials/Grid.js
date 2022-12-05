@@ -41,7 +41,7 @@ function Grid() {
             setProducts(data);
         };
         fetchData();
-    }, [setProducts]);
+    }, []);
 
 
     // sort the products by price:
@@ -83,7 +83,7 @@ function Grid() {
     return (
         <MDBContainer className='mt-3'>
             <MDBRow className='mb-3'>
-                {loading ? <h1>Loading...</h1> : final}
+                {loading ? <h1 className='loading'>Loading...</h1> : final}
             </MDBRow>
         </MDBContainer>
     );

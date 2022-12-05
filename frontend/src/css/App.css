@@ -42,3 +42,7 @@ footer {
     align-items: center;
     align-content: center;
 }
+
+.loading {
+    text-align: center;
+}

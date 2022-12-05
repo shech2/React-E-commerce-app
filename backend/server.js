@@ -33,8 +33,10 @@ app.use(cors());
 //Routers:
 import productRouter from "../backend/src/routers/product.js";
 import cartRouter from "../backend/src/routers/cart.js";
+import orderRouter from "../backend/src/routers/order.js";
 app.use("/", productRouter);
 app.use("/", cartRouter);
+app.use("/", orderRouter);
 
 
 app.listen(3001, () => {

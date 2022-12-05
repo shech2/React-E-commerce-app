@@ -1,0 +1,53 @@
+.loading {
+    text-align: center;
+}
+
+.card2 {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+}
+
+.card-img {
+    height: 150px;
+    width: 170px;
+}
+
+.card-title2 {
+    text-align: end;
+    align-items: flex-start;
+}
+
+.card-price2 {
+    text-align: end;
+    align-items: flex-start;
+}
+
+.card-body2 {}
+
+.card-text2 {
+    text-align: end;
+    align-items: flex-start;
+}
+
+.checkout {
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.checkout button {
+    background-color: rgb(143, 143, 206);
+    color: #111;
+    height: 5rem;
+    width: 10rem;
+    border-radius: 30px;
+}
+
+.checkout button:hover {
+    background-color: rgb(143, 143, 206);
+    color: white;
+    height: 5rem;
+    width: 10rem;
+    border-radius: 30px;
+}

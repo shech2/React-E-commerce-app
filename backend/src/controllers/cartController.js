@@ -18,8 +18,17 @@ const addToCart = (req, res) => {
     res.send(product);
 };
 
+const deleteCart = (req, res) => {
+    const cart = req.body
+    console.log(cart);
+    cartService.deleteCart(cart._id);
+    res.send(cart);
+};
+
+
 export default {
     addToCart,
     getCart,
+    deleteCart
 }
 

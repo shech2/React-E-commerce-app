@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useState, useReducer, useContext } from 'react';
 import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import CartItem from './CartItem.js';
+import { Store } from '../../Store.js';
 
 
 const reducer = (state, action) => {
@@ -19,6 +20,8 @@ const reducer = (state, action) => {
 
 
 function CartGrid() {
+    const { state } = useContext(Store);
+    const ctxCart = state.cart.cartItems;
     const [{ loading }, dispatch] = useReducer(reducer, {
         products: [],
         loading: false,
@@ -43,7 +46,25 @@ function CartGrid() {
             dispatch({ type: "FETCH_SUCCESS", payload: Data.data });
         };
         fetchData();
-    }, [setCart]);
+    }, []);
+
+
+    useEffect(() => {
+        async function fetchData() {
+            await axios({
+                method: 'POST',
+                url: 'http://localhost:3001/delete-cart',
+                data: {
+                    cart: ctxCart
+                }
+            }).catch((err) => {
+                dispatch({ type: "FETCH_ERROR", payload: err });
+            });
+        }
+        fetchData();
+    }, []);
+
+
 
 
     // Card components creation:
@@ -66,7 +87,7 @@ function CartGrid() {
     return (
         <MDBContainer className='mt-3'>
             <MDBRow className='mb-3'>
-                {loading ? <h1>Loading...</h1> : final}
+                {ctxCart.length === 0 ? <h1>Cart is Empty</h1> : loading ? <h1 className='loading'>Loading...</h1> : final}
             </MDBRow>
         </MDBContainer>
     );

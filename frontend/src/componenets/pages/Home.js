@@ -1,6 +1,9 @@
 import React from "react";
 import Grid from '../partials/Grid';
 
+// CSS for Footer and Header:
+import '../../css/App.css';
+
 function Home() {
 
     return (
