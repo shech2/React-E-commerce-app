@@ -8,9 +8,9 @@ const getCart = async () => {
     return cart;
 }
 
-const deleteCart = async (id) => {
+const deleteCart = async () => {
     try {
-        await cartModel.findByIdAndDelete(id);
+        await cartModel.deleteOne();
         console.log("Cart deleted from DB");
     } catch (error) {
         console.log(error.message);

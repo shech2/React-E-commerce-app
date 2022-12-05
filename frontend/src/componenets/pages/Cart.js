@@ -22,7 +22,13 @@ function Cart() {
             })
         };
         fetchData().then(() => {
-            console.log("Order created");
+            axios({
+                method: 'POST',
+                url: 'http://localhost:3001/delete-cart',
+            }).then(() => {
+                alert("Order placed");
+                window.location.href = "/";
+            });
         });
     }
 

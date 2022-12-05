@@ -19,10 +19,10 @@ const addToCart = (req, res) => {
 };
 
 const deleteCart = (req, res) => {
-    const cart = req.body
-    console.log(cart);
-    cartService.deleteCart(cart._id);
-    res.send(cart);
+    cartService.deleteCart().catch((err) => {
+        console.log(err.message);
+    });
+    res.send({ success: true });
 };
 
 
