@@ -33,7 +33,7 @@ function Cart() {
     return (
         <div>
             <CartGrid />
-            <div className="checkout"><button onClick={onClickHandler}>Checkout</button></div>
+            <div className="checkout">{cart.cartItems.length !== 0 ? <button onClick={onClickHandler}>Checkout</button> : ''}</div>
         </div>
     );
 
