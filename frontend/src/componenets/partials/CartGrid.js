@@ -49,24 +49,6 @@ function CartGrid() {
     }, []);
 
 
-    useEffect(() => {
-        async function fetchData() {
-            await axios({
-                method: 'POST',
-                url: 'http://localhost:3001/delete-cart',
-                data: {
-                    cart: ctxCart
-                }
-            }).catch((err) => {
-                dispatch({ type: "FETCH_ERROR", payload: err });
-            });
-        }
-        fetchData();
-    }, []);
-
-
-
-
     // Card components creation:
     const Items = cartItems.map((product) => {
         return (

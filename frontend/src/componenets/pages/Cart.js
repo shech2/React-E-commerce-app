@@ -10,7 +10,6 @@ function Cart() {
     const { state } = useContext(Store);
     const { cart } = state
     console.log(cart.cartItems, "cart");
-
     const onClickHandler = () => {
         const fetchData = async () => {
             const { data } = await axios({
