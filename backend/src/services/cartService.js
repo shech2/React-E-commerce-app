@@ -39,7 +39,6 @@ const addToCart = async (product) => {
                 if (err) {
                     console.log(err.message);
                 }
-                console.log(doc);
             });
 
         }
