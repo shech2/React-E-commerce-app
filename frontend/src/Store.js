@@ -18,6 +18,14 @@ const reducer = (state, action) => {
                     cartItems: [...state.cart.cartItems, action.payload],
                 },
             };
+        case "DELETE_CART":
+            return {
+                ...state,
+                cart: {
+                    cartItems: [],
+                },
+            };
+
         case "ADD_TO_CART_ERROR":
             return { ...state, error: action.payload };
         default:

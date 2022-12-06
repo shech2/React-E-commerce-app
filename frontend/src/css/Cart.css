@@ -42,6 +42,7 @@
     height: 5rem;
     width: 10rem;
     border-radius: 30px;
+    margin: 20px;
 }
 
 .checkout button:hover {

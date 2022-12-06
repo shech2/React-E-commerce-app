@@ -26,7 +26,8 @@ function Header(props) {
     };
     fetchData();
 
-    const check = cart.cartItems ? cart.cartItems.length : 0;
+    const check = cart.cartItems !== 0 ? cart.cartItems.length : 0;
+    console.log(check);
     useEffect(() => {
         fetchData().then((cart) => {
             if (cart.length !== 0) {

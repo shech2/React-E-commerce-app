@@ -15,8 +15,8 @@ const getCart = async () => {
 
 const deleteCart = async () => {
     try {
-        await cartModel.deleteOne();
-        console.log("Cart deleted from DB");
+        await cartModel.updateOne({}, { $set: { cartItems: [], totalPrice: 0, totalQuantity: 0 } });
+        console.log("Cart deleted");
     } catch (error) {
         console.log(error.message);
     }

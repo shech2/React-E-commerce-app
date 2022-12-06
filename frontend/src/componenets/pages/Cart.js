@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import CartGrid from '../partials/CartGrid.js';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 // import CSS for Footer and Header:
 import '../../css/Cart.css'
 import { Store } from '../../Store.js';
 
 function Cart() {
-    const { state } = useContext(Store);
+    const { state, dispatch: ctxDispatch } = useContext(Store);
     const { cart } = state
+    const navigate = useNavigate();
     const onClickHandler = () => {
         const fetchData = async () => {
             await axios({
@@ -19,24 +20,37 @@ function Cart() {
                 }
             })
         };
-        fetchData().then(() => {
+        fetchData().then((data) => {
             axios({
                 method: 'POST',
                 url: 'http://localhost:3001/delete-cart',
             }).then(() => {
+                ctxDispatch({ type: "DELETE_CART" });
                 alert("Order placed");
-                window.location.href = "/";
+                clearCart();
             });
+        });
+    }
+
+    const clearCart = () => {
+        axios({
+            method: 'POST',
+            url: 'http://localhost:3001/delete-cart',
+        }).then(() => {
+            ctxDispatch({ type: "DELETE_CART" });
+            navigate("/cart", { replace: true });
+            cart.cartItems = [];
         });
     }
 
     return (
         <div>
             <CartGrid />
-            <div className="checkout">{cart.cartItems.length !== 0 ? <button onClick={onClickHandler}>Checkout</button> : ''}</div>
-        </div>
-    );
+            <div className="checkout">{cart.cartItems.length !== 0 ? <button onClick={clearCart}>Clear Cart</button> : ''}
+                {cart.cartItems.length !== 0 ? <button onClick={onClickHandler}>Checkout</button> : ''}</div>
 
+        </div >
+    );
 }
 
 export default Cart;
