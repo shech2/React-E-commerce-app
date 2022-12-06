@@ -1,5 +1,4 @@
 import OrderModel from '../models/order.js';
-import CartModel from '../models/cart.js';
 
 const getOrders = async () => {
     const orders = await OrderModel.find();

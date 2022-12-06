@@ -9,10 +9,9 @@ import { Store } from '../../Store.js';
 function Cart() {
     const { state } = useContext(Store);
     const { cart } = state
-    console.log(cart.cartItems, "cart");
     const onClickHandler = () => {
         const fetchData = async () => {
-            const { data } = await axios({
+            await axios({
                 method: 'POST',
                 url: 'http://localhost:3001/add-order',
                 data: {

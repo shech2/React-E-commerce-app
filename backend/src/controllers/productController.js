@@ -4,8 +4,10 @@ import { Data } from '../../data.js';
 
 
 const getData = async (req, res) => {
-    const products = await productServies.getProducts();
-    res.send(products);
+    const products = await productServies.getProducts().catch((err) => {
+        res.status(404).json({ message: err.message, success: false });
+    });
+    res.status(200).json(products);
 }
 
 
@@ -15,9 +17,9 @@ const addToDB = async (req, res) => {
         Data.map((product) => {
             productServies.createProduct(product);
         });
-        res.status(200).json({ message: "Products added to DB" });
+        res.status(203).json({ message: "Products added to DB", success: true });
     } catch (error) {
-        res.status(404).json({ message: error.message });
+        res.status(404).json({ message: error.message, success: false });
     }
 }
 

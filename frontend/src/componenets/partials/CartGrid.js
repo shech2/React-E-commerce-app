@@ -10,7 +10,7 @@ const reducer = (state, action) => {
         case "FETCH_REQUEST":
             return { ...state, loading: true };
         case "FETCH_SUCCESS":
-            return { ...state, loading: false, products: action.payload };
+            return { ...state, loading: false };
         case "FETCH_ERROR":
             return { ...state, loading: false, error: action.payload };
         default:
@@ -28,9 +28,7 @@ function CartGrid() {
         error: false,
     });
 
-    const [cart, setCart] = useState([]);
     const [cartItems, setCartItems] = useState([]);
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,9 +39,8 @@ function CartGrid() {
             }).catch((err) => {
                 dispatch({ type: "FETCH_ERROR", payload: err });
             });
-            setCart(Data.data);
             setCartItems(Data.data[0].cartItems);
-            dispatch({ type: "FETCH_SUCCESS", payload: Data.data });
+            dispatch({ type: "FETCH_SUCCESS" });
         };
         fetchData();
     }, []);
@@ -69,7 +66,8 @@ function CartGrid() {
     return (
         <MDBContainer className='mt-3'>
             <MDBRow className='mb-3'>
-                {ctxCart.length === 0 ? <h1>Cart is Empty</h1> : loading ? <h1 className='loading'>Loading...</h1> : final}
+                {ctxCart.length === 0 ? <h1 className='h1'>Cart is Empty</h1>
+                    : loading ? <h1 className='loading'>Loading...</h1> : final}
             </MDBRow>
         </MDBContainer>
     );

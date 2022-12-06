@@ -4,7 +4,12 @@ import ProductModel from '../models/product.js';
 
 
 const getCart = async () => {
-    const cart = await cartModel.find().populate('cartItems');
+    const cart = await cartModel.find()
+        .populate('cartItems')
+        .catch((err) => {
+            console.log(err.message);
+        });
+    console.log("Cart fetched");
     return cart;
 }
 
@@ -18,8 +23,12 @@ const deleteCart = async () => {
 }
 
 const addToCart = async (product) => {
-    const pr = await ProductModel.findById(product.product._id);
-    const cart = await cartModel.findOne();
+    const pr = await ProductModel.findById(product.product._id).catch((err) => {
+        console.log(err.message);
+    });
+    const cart = await cartModel.findOne().catch((err) => {
+        console.log(err.message);
+    });
     if (cart) {
         const index = cart.cartItems.findIndex((p) => p._id.toString() === pr._id.toString());
         if (index === -1) {
@@ -37,6 +46,7 @@ const addToCart = async (product) => {
         cart.totalPrice += pr.price;
         cart.totalQuantity += 1;
         await cart.save();
+        console.log("Product added to cart");
     } else {
         const newCart = new cartModel({
             cartItems: [pr],
@@ -44,6 +54,7 @@ const addToCart = async (product) => {
             totalQuantity: 1,
         });
         await newCart.save();
+        console.log("Cart created");
     }
 }
 
