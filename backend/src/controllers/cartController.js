@@ -1,4 +1,3 @@
-import json from 'body-parser';
 import cartService from '../services/cartService.js';
 
 
