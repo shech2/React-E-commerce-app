@@ -19,7 +19,7 @@ const App = () => {
     return (
         <Router>
             <>
-                <Header logo='https://cdn.bitrix24.com/b2414835/landing/2c6/2c67a8aaa9039c5b02ecc1b1f44f1bda/Ayala_Malls_Logo_2x.png' />
+                <Header logo='https://seeklogo.com/images/E/e-commerce-concept-logo-5146F23CC5-seeklogo.com.png' />
 
 
                 <Routes>
