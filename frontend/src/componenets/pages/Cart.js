@@ -6,8 +6,7 @@ import '../../css/Cart.css'
 import { Store } from '../../Store.js';
 
 function Cart() {
-    const { state, dispatch: ctxDispatch } = useContext(Store);
-    const { cart } = state
+    const { state: { cart }, dispatch: ctxDispatch } = useContext(Store);
     const onClickHandler = () => {
         const fetchData = async () => {
             await axios({
