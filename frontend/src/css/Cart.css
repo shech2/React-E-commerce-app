@@ -23,8 +23,6 @@
     align-items: flex-start;
 }
 
-.card-body2 {}
-
 .card-text2 {
     text-align: end;
     align-items: flex-start;
@@ -58,4 +56,26 @@
     padding-bottom: 15px;
     padding-top: 15px;
 
+}
+
+.container-bottom {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.price {
+    width: 10%;
+    text-align: center;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    margin-bottom: 10px;
 }

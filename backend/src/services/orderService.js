@@ -8,6 +8,11 @@ const getOrders = async () => {
 const createOrder = async (order) => {
     const newOrder = new OrderModel({
         orderItems: order.orderItems,
+        name: order.name,
+        email: order.email,
+        address: order.address,
+        phone: order.phone,
+        total: order.total
     });
     await newOrder.save().then(() => {
         console.log("Order created");

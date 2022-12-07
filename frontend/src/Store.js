@@ -5,8 +5,9 @@ export const Store = createContext();
 
 const initialState = {
     cart: {
-        cartItems: []
-    }
+        cartItems: [],
+        total: 0,
+    },
 };
 
 const reducer = (state, action) => {
@@ -15,7 +16,8 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 cart: {
-                    cartItems: [...state.cart.cartItems, action.payload],
+                    cartItems: [...state.cart.cartItems, action.payload.product],
+                    total: state.cart.total + action.payload.price,
                 },
             };
         case "DELETE_CART":
@@ -23,6 +25,7 @@ const reducer = (state, action) => {
                 ...state,
                 cart: {
                     cartItems: [],
+                    total: 0,
                 },
             };
 

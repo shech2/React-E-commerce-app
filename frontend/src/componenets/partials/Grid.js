@@ -59,7 +59,12 @@ function Grid() {
                 product: item
             }
         })
-        ctxDispatch({ type: 'ADD_TO_CART', payload: item });
+        ctxDispatch({
+            type: 'ADD_TO_CART', payload: {
+                product: item,
+                price: item.price
+            }
+        });
     };
 
 

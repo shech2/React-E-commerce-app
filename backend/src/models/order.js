@@ -6,9 +6,29 @@ const orderSchema = new mongoose.Schema({
         ref: "Product",
         required: true
     }],
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: Number,
+        required: true
+    },
     dateCreated: {
         type: Date,
         default: Date.now
+    },
+    total: {
+        type: Number,
+        required: true
     }
 }, { timestamps: true });
 
