@@ -4,6 +4,7 @@ import axios from 'axios';
 import Card from '../partials/Card.js';
 import { Store } from '../../Store.js';
 import Spinner from 'react-bootstrap/Spinner';
+import CardModal from '../partials/CardModal.js';
 
 // Reducer:
 const reducer = (state, action) => {
@@ -21,6 +22,9 @@ const reducer = (state, action) => {
 
 
 function Grid() {
+    const [bottomModal, setBottomModal] = useState(false);
+
+
     const [{ loading }, dispatch] = useReducer(reducer, {
         products: [],
         loading: false,
@@ -74,7 +78,7 @@ function Grid() {
     const Items = productsNew.map((product) => {
         return (
             <MDBCol key={product._id} size='4' sm={4} lg={4} xl={4} xxl={4}>
-                <Card key={product._id} items={product} handleClick={onClickHandler} />
+                <Card key={product._id} items={product} handleClick={onClickHandler} toggleModal={setBottomModal} />
             </MDBCol>
         )
     });
@@ -87,13 +91,16 @@ function Grid() {
     }
 
     return (
-        <MDBContainer className='mt-3'>
-            <MDBRow className='mb-3'>
-                {loading ? <Spinner className='loading'>
-                    <span className='visually-hidden'>Loading...</span>
-                </Spinner> : final}
-            </MDBRow>
-        </MDBContainer>
+        <>
+            <CardModal bottomModal={bottomModal} toggleModal={setBottomModal} />
+            <MDBContainer className='mt-3'>
+                <MDBRow className='mb-3'>
+                    {loading ? <Spinner className='loading'>
+                        <span className='visually-hidden'>Loading...</span>
+                    </Spinner> : final}
+                </MDBRow>
+            </MDBContainer>
+        </>
     );
 }
 
