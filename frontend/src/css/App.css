@@ -24,11 +24,11 @@ header {
     height: 50%;
 }
 
-footer {
-    position: static;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .row {

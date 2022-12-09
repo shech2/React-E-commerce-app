@@ -21,15 +21,16 @@ const App = () => {
             <>
                 <Header logo='https://seeklogo.com/images/E/e-commerce-concept-logo-5146F23CC5-seeklogo.com.png' />
 
+                <div className='flex-wrapper'>
+                    <Routes>
+                        <Route path='/' element={<Home />} />
+                        <Route path='/cart' element={<Cart />} />
+                        <Route path='*' element={<h1>Page Not Found</h1>} />
+                    </Routes>
 
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/cart' element={<Cart />} />
-                    <Route path='*' element={<h1>Page Not Found</h1>} />
-                </Routes>
 
-
-                <Footer text='Shop' />
+                    <Footer text='Shop' />
+                </div>
             </>
         </Router>
     );
