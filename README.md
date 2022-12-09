@@ -10,3 +10,12 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.7.5",
+
+
+# How to run:
+#     Frontend: 
+      cd frontend
+      npm start
+#     Backend: 
+      cd backend
+      npm start
