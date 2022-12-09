@@ -13,9 +13,6 @@ function Modal({ toggleModal, topModal }) {
                                 <MDBBtn color='success' size='sm' className='ms-2' onClick={() => toggleModal(false)}>
                                     Ok, thanks
                                 </MDBBtn>
-                                <MDBBtn size='sm' className='ms-2'>
-                                    Learn more
-                                </MDBBtn>
                             </div>
                         </MDBModalBody>
                     </MDBModalContent>
