@@ -95,7 +95,7 @@ function Grid() {
             <CardModal bottomModal={bottomModal} toggleModal={setBottomModal} />
             <MDBContainer className='mt-3'>
                 <MDBRow className='mb-3'>
-                    {loading ? <Spinner className='loading'>
+                    {loading ? <Spinner variant='primary' className='loading'>
                         <span className='visually-hidden'>Loading...</span>
                     </Spinner> : final}
                 </MDBRow>

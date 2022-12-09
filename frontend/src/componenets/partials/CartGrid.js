@@ -68,7 +68,7 @@ function CartGrid() {
         <MDBContainer className='mt-3'>
             <MDBRow className='mb-3'>
                 {ctxCart.length === 0 ? <h1 className='h1'>Cart is Empty</h1>
-                    : loading ? <Spinner animation='border' role="status" className='loading'>
+                    : loading ? <Spinner variant='primary' animation='border' role="status" className='loading'>
                         <span className="visually-hidden">Loading...</span>
                     </Spinner> : final}
             </MDBRow>
