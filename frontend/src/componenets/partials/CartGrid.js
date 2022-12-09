@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useReducer, useContext } from 'react';
 import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import Spinner from 'react-bootstrap/Spinner';
 import axios from 'axios';
 import CartItem from './CartItem.js';
 import { Store } from '../../Store.js';
@@ -67,7 +68,9 @@ function CartGrid() {
         <MDBContainer className='mt-3'>
             <MDBRow className='mb-3'>
                 {ctxCart.length === 0 ? <h1 className='h1'>Cart is Empty</h1>
-                    : loading ? <h1 className='loading'>Loading...</h1> : final}
+                    : loading ? <Spinner animation='border' role="status" className='loading'>
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner> : final}
             </MDBRow>
         </MDBContainer>
     );

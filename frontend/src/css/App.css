@@ -44,5 +44,6 @@ header {
 }
 
 .loading {
-    text-align: center;
+    position: relative;
+    left: 50%;
 }

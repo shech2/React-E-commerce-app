@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import Card from '../partials/Card.js';
 import { Store } from '../../Store.js';
+import Spinner from 'react-bootstrap/Spinner';
 
 // Reducer:
 const reducer = (state, action) => {
@@ -88,7 +89,9 @@ function Grid() {
     return (
         <MDBContainer className='mt-3'>
             <MDBRow className='mb-3'>
-                {loading ? <h1 className='loading'>Loading...</h1> : final}
+                {loading ? <Spinner className='loading'>
+                    <span className='visually-hidden'>Loading...</span>
+                </Spinner> : final}
             </MDBRow>
         </MDBContainer>
     );
