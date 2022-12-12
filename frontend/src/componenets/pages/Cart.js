@@ -56,6 +56,7 @@ function Cart() {
             }).then(() => {
                 ctxDispatch({ type: "DELETE_CART" });
                 clearCart();
+                setTopModal(true);
             });
         });
     }
@@ -75,7 +76,7 @@ function Cart() {
             <div className="price container"> Total Price : ${cart.total.toFixed(2)}  </div>
             {
                 cart.cartItems.length !== 0
-                    ? <Form clearCart={clearCart} handleSubmit={onSubmit} cart={cart} toggleModal={setTopModal} /> : loading ? <div>Loading...</div>
+                    ? <Form clearCart={clearCart} handleSubmit={onSubmit} cart={cart} /> : loading ? <div>Loading...</div>
                         : ''
             }
         </div >
