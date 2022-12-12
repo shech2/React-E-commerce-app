@@ -76,7 +76,7 @@ function Cart() {
             <div className="price container"> Total Price : ${cart.total.toFixed(2)}  </div>
             {
                 cart.cartItems.length !== 0
-                    ? <Form clearCart={clearCart} handleSubmit={onSubmit} cart={cart} /> : loading ? <div>Loading...</div>
+                    ? <Form clearCart={clearCart} handleSubmit={onSubmit} /> : loading ? <div>Loading...</div>
                         : ''
             }
         </div >

@@ -3,7 +3,7 @@ import { MDBContainer } from 'mdb-react-ui-kit';
 
 
 
-const Form = ({ handleSubmit, clearCart, cart }) => {
+const Form = ({ handleSubmit, clearCart }) => {
 
     return (
         <MDBContainer className="container-bottom">
@@ -40,7 +40,7 @@ const Form = ({ handleSubmit, clearCart, cart }) => {
                         className="form-control"
                     />
                 </div>
-                <div className="checkout">{cart.cartItems.length !== 0 ? <button onClick={() => clearCart()}>Clear Cart</button> : ''}
+                <div className="checkout"><button onClick={() => clearCart()}>Clear Cart</button>
                     <button type="submit">
                         Checkout
                     </button>
