@@ -21,8 +21,8 @@ const reducer = (state, action) => {
 
 
 function CartGrid() {
-    const { state } = useContext(Store);
-    const ctxCart = state.cart.cartItems;
+    const { state: { cart } } = useContext(Store);
+    const ctxCart = cart.cartItems;
     const [{ loading }, dispatch] = useReducer(reducer, {
         products: [],
         loading: false,

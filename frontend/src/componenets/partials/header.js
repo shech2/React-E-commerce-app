@@ -17,6 +17,7 @@ function Header(props) {
     const { state } = useContext(Store);
     const { cart } = state;
     const [badge, setBadge] = useState(0);
+
     const fetchData = async () => {
         const { data } = await axios({
             method: 'GET',
@@ -27,6 +28,7 @@ function Header(props) {
     fetchData();
 
     const check = cart.cartItems !== 0 ? cart.cartItems.length : 0;
+
     useEffect(() => {
         fetchData().then((cart) => {
             if (cart.length !== 0) {

@@ -7,7 +7,7 @@ function CardModal({ toggleModal, bottomModal }) {
         setTimeout(() => {
             toggleModal(false);
         }, 2000)
-    }, [bottomModal]);
+    }, [toggleModal]);
 
     return (
         <>

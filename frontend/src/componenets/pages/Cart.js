@@ -22,13 +22,12 @@ const reducer = (state, action) => {
 
 function Cart() {
     const [topModal, setTopModal] = useState(false);
-
+    const { state: { cart }, dispatch: ctxDispatch } = useContext(Store);
     const [{ loading }, dispatch] = useReducer(reducer, {
         cartItems: [],
         loading: false,
         error: false,
     });
-    const { state: { cart }, dispatch: ctxDispatch } = useContext(Store);
     const onSubmit = (e) => {
         e.preventDefault();
         const fetchData = async () => {
