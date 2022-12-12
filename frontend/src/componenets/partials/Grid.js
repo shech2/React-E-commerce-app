@@ -70,6 +70,7 @@ function Grid() {
                 price: item.price
             }
         });
+        setBottomModal(true);
     };
 
 
@@ -78,7 +79,7 @@ function Grid() {
     const Items = productsNew.map((product) => {
         return (
             <MDBCol key={product._id} size='4' sm={4} lg={4} xl={4} xxl={4}>
-                <Card key={product._id} items={product} handleClick={onClickHandler} toggleModal={setBottomModal} />
+                <Card key={product._id} items={product} handleClick={onClickHandler} />
             </MDBCol>
         )
     });
