@@ -8,7 +8,7 @@ const initialState = {
         cartItems: [],
         total: 0,
     },
-};  
+};
 
 const reducer = (state, action) => {
     switch (action.type) {

@@ -68,7 +68,7 @@ export const Data = [
         title: 'Banana',
         price: 2.99,
         quantity: 1,
-        url: "https://www.hdwallpapers.in/download/bunch_of_large_yellow_bananas_with_black_stripe_hd_banana-HD.jpg",
+        url: "https://th.bing.com/th/id/OIP.ng-1m3TNKHBmudy6otjK8wHaEK?pid=ImgDet&rs=1",
         description: "This is a Avocado"
     }
 
